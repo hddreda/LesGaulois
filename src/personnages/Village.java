@@ -11,7 +11,7 @@ public class Village {
 		// Le villageois demandé n'existe pas. Le numéro maximum est 29 pour un village de 30 gaulois.
 		
 		Chef chef = new Chef("Abraracourcix", 6, village);
-		village.ajouterHabitant(chef);
+		village.setChef(chef);
 		
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		village.ajouterHabitant(asterix);
@@ -46,6 +46,7 @@ public class Village {
 	
 	//
 	
+	
 	public void setChef(Chef chef) {
 		this.chef = chef;
 	}
@@ -70,7 +71,7 @@ public class Village {
 		System.out.println("Dans le village du chef " + this.chef.getNom() + "vivent les légendaires gaulois :");
 		for(int i = 0; i < this.nbVillageois; ++i) {
 			Gaulois g = this.villageois[i];
-			if(g != chef) System.out.println(" - " + g.getNom());
+			System.out.println(" - " + g.getNom());
 		}
 	}
 }
