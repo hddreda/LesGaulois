@@ -41,34 +41,24 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 	
-	public void recevoirCoup(int forceCoup) {
-		force -= forceCoup;
-		if (force > 0) {
-			parler("Aïe");
-		} else {
-			parler("J'abandonne...");
-		}
-	}
-
 	public int getForce() {
 		return force;
 	}
 
-	//
+	
+	public void recevoirCoup(int forceCoup) {
+		assert this.force >= 0;
+		int tmp = this.force;
+		
+		this.force -= forceCoup;
+		
+		if (this.force > 0) { parler("Aie"); }
+		else { parler("J'abandonne..."); }
+		
+		assert this.force < tmp;
+	}
 
-//	public void recevoirCoup(int forceCoup) {
-//		assert this.force >= 0;
-//		int tmp = this.force;
-//		
-//		this.force -= forceCoup;
-//		
-//		if (this.force > 0) { parler("Aie"); }
-//		else { parler("J'abandonne..."); }
-//		
-//		assert this.force < tmp;
-//	}
-
-	//
+	
 	
 	private void forcerAsEquiper(Equipement equipement) {
 		System.out.println("Le soldat " + this.getNom() + " s'équipe avec un " + equipement);
