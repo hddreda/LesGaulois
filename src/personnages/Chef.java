@@ -1,5 +1,7 @@
 package personnages;
 
+import personnages.Village;
+
 public class Chef {
 	private String nom;
 	private int force;
@@ -9,7 +11,7 @@ public class Chef {
 	public Chef(String nom, int force, Village village) {
 		this.nom = nom;
 		this.force = force;
-		this.effetPotion = effetPotion;
+		this.effetPotion = 1;
 		this.village = village;
 	}
 	
@@ -30,4 +32,6 @@ public class Chef {
 		romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
+	
+	public Village getVillage() { return this.village; }
 }
