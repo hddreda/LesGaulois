@@ -33,12 +33,24 @@ public class Gaulois {
     public String toString() { 
 	  return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]"; }
 	 
-	
-	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix",8);
-		System.out.println(asterix);
+    public void boirePotion(int force) {
+		this.effetPotion = force;
+		this.parler("Merci Druide, je sens que ma force est " + this.effetPotion + " fois décuplée.");
+	}
+    
+    
+    public static void main(String[] args) {
+		Gaulois g = new Gaulois("Astérix", 8);
+		Romain r = new Romain("César", 6);
+		
+		assert g.prendreParole().equals("Le gaulois " + g.getNom() + " : ");
+		
+		String text = "test";
+		g.parler(text);
+		
+		g.frapper(r);
     }
-	
+    
 	
 }
 
