@@ -113,6 +113,7 @@ public class Romain {
 		return forceCoup < 0 ? 0 : forceCoup;
 	}
 
+
 	private Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipement];
 
