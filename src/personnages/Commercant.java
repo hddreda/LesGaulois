@@ -6,7 +6,7 @@ public class Commercant extends Humain {
 		super(nom, "thé", argent);
 	}
 	
-	public int setFaireExtorquer() {
+	public int seFaireExtorquer() {
 		int argent = this.getArgent();
 		this.perdreArgent(argent);
 		this.parler("J’ai tout perdu ! Le monde est trop injuste...");
