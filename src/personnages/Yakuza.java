@@ -29,6 +29,29 @@ public class Yakuza extends Humain{
 		this.parler("J’ai piqué les " + argentExtorque + " sous de " + victime.getNom() + ", ce qui me fait " + this.getArgent() + " sous dans ma poche. Hi ! Hi !");
 	}
 	
+	public int perdre() {
+		int argent = this.getArgent();
+		this.perdreArgent(argent);
+		this.reputation--;
+		
+		this.parler("J’ai perdu mon duel et mes " + argent + " sous, snif... J'ai déshonoré le clan de " + this.getClan() + ".");
+		
+		return this.getReputation();
+	}
+	
+	public void gagner(int gain) {
+		this.gagnerArgent(gain);
+		this.reputation++;
+		this.parler("Ce ronin pensait vraiment battre " + this.getNom() + " du clan de " + this.getClan() + " ? Je l'ai dépouillé de ses " + gain + " sous.");
+	}
+	
+	//	
+	
+	@Override
+	public void direBonjour() {
+		super.direBonjour();
+		this.parler("Mon clan est celui de " + this.getClan() + ".");
+	}
 	
 	
 }
